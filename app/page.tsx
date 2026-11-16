@@ -83,7 +83,7 @@ export default function Home() {
         <Reveal>
           <div className="contact-card">
             <div className="contact-text">
-              <h2>Looking for an internship from {site.internshipStart}</h2>
+              <h2>Get in touch</h2>
               <p>Quantitative finance, risk and data science.</p>
             </div>
             <div className="buttons">

@@ -6,9 +6,8 @@ export const site = {
   school: "INSEA · Decision Sciences & OR",
   intro:
     "Optimization, quantitative finance and machine learning, from econometric studies to routing solvers.",
-  // TODO: replace the three placeholders below.
+  // TODO: replace the email placeholder below.
   email: "your.email@example.com",
-  internshipStart: "[START DATE]",
   github: "https://github.com/salaho05",
   linkedin: "https://www.linkedin.com/in/salaheddine-masmoudi-aa541a331",
 };
