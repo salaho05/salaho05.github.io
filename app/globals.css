@@ -1,0 +1,499 @@
+/* ---------- Palette (Option C: Blueprint Grid) ---------- */
+:root {
+  --bg: #eef2f7;
+  --grid: #dce3ec;
+  --ink: #0e1a2b;
+  --muted: #36445a;
+  --accent: #2447f9;
+  --orange: #f26b21;
+  --orange-text: #a8430a;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+  background-color: var(--bg);
+  background-image: linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 700;
+}
+
+p {
+  margin: 0;
+}
+
+.container {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.muted {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+/* ---------- Scroll progress bar ---------- */
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  z-index: 10;
+}
+
+.progress-bar {
+  height: 100%;
+  background: var(--accent);
+  transform-origin: left center;
+}
+
+/* ---------- Navigation ---------- */
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.logo {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.nav-links a {
+  padding: 12px 14px;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.nav-links .nav-cta {
+  padding: 12px 18px;
+  background: var(--ink);
+  color: var(--bg);
+  border-radius: 999px;
+}
+
+.nav-links .nav-cta:hover {
+  color: var(--bg);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+  padding-top: 48px;
+  padding-bottom: 64px;
+}
+
+.hero-text {
+  flex: 1 1 480px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.badge {
+  align-self: flex-start;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: var(--white);
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  padding: 8px 14px;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6.5vw, 5rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+
+.lead {
+  max-width: 32rem;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.hero-card {
+  flex: 1 1 420px;
+  min-width: 0;
+  background: var(--white);
+  border: 1.5px solid var(--ink);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 8px 8px 0 var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hero-card-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.route-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- Buttons ---------- */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 24px;
+  font-weight: 600;
+  border: 1.5px solid var(--ink);
+  border-radius: 8px;
+  overflow-wrap: anywhere;
+}
+
+.button-accent {
+  background: var(--accent);
+  color: var(--white);
+}
+
+.button-light {
+  background: var(--white);
+  color: var(--ink);
+}
+
+.button-dark {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lift:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+/* ---------- Projects ---------- */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding-top: 24px;
+  padding-bottom: 64px;
+}
+
+h2 {
+  font-size: 36px;
+  letter-spacing: -0.02em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(330px, 100%), 1fr));
+  gap: 24px;
+}
+
+/* Reveal wraps each tile, so the wrapper stretches the tile to the row height. */
+.grid > .reveal {
+  display: flex;
+}
+
+.tile {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 220px;
+  padding: 28px;
+  background: var(--white);
+  border: 1.5px solid var(--ink);
+  border-radius: 16px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+a.tile:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 8px 8px 0 var(--ink);
+}
+
+.tile h3 {
+  font-size: 26px;
+  line-height: 1.1;
+}
+
+.tile p {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.tile-tag {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--orange-text);
+}
+
+.tile-accent {
+  background: var(--accent);
+  color: var(--white);
+}
+
+.tile-accent p,
+.tile-accent .tile-tag {
+  color: var(--white);
+}
+
+.tile-dark {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.tile-dark p {
+  color: #c5cedb;
+}
+
+.tile-dark .tile-tag {
+  color: #ffb27a;
+}
+
+a.tile-dark:hover {
+  box-shadow: 8px 8px 0 var(--accent);
+}
+
+.tile-dashed {
+  border-style: dashed;
+}
+
+.tile-dashed .tile-tag {
+  color: var(--muted);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.chips li {
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  padding: 6px 12px;
+}
+
+/* ---------- Contact ---------- */
+.footer {
+  padding-bottom: 72px;
+}
+
+.contact-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+  background: var(--white);
+  border: 1.5px solid var(--ink);
+  border-radius: 16px;
+  box-shadow: 8px 8px 0 var(--accent);
+}
+
+.contact-text {
+  flex: 1 1 380px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-text h2 {
+  font-size: clamp(1.6rem, 4vw, 2.25rem);
+}
+
+.contact-text p {
+  color: var(--muted);
+}
+
+/* ---------- Animations ---------- */
+
+/* Hero items slide in when the page loads. */
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.enter {
+  animation: enter 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.enter-1 {
+  animation-delay: 0.1s;
+}
+
+.enter-2 {
+  animation-delay: 0.2s;
+}
+
+.enter-3 {
+  animation-delay: 0.3s;
+}
+
+/* Sections fade up when scrolled into view (see components/Reveal.tsx). */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* The route draws itself, then holds, on an 8 second loop. */
+@keyframes route {
+  0% {
+    stroke-dashoffset: 1300;
+  }
+  60% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.route-line {
+  stroke-dasharray: 1300;
+  animation: route 8s ease-in-out infinite;
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.route-stop {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: pop 0.5s cubic-bezier(0.3, 1.4, 0.5, 1) both;
+}
+
+/* Visitors who ask their device for less motion get a still page. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .enter,
+  .route-line,
+  .route-stop {
+    animation: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 600px) {
+  .hero {
+    padding-top: 24px;
+  }
+
+  .contact-card {
+    padding: 24px;
+  }
+
+  .hero-card {
+    box-shadow: 5px 5px 0 var(--ink);
+  }
+}
