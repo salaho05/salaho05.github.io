@@ -1,7 +1,7 @@
 import Reveal from "./components/Reveal";
 import RouteAnimation from "./components/RouteAnimation";
 import ScrollProgress from "./components/ScrollProgress";
-import { projects, site, stack } from "./data";
+import { education, experience, projects, site, stack } from "./data";
 
 export default function Home() {
   return (
@@ -13,6 +13,7 @@ export default function Home() {
           {site.shortName}
         </a>
         <nav aria-label="Main" className="nav-links">
+          <a href="#experience">Experience</a>
           <a href="#projects">Projects</a>
           <a href="#stack">Stack</a>
           <a href="#contact" className="nav-cta lift">
@@ -51,6 +52,42 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="experience" className="container section">
+          <Reveal>
+            <h2>Experience</h2>
+          </Reveal>
+          <div className="grid">
+            {experience.map((job, index) => (
+              <Reveal key={job.title} delay={index * 100}>
+                <article className="tile">
+                  <span className="tile-tag">
+                    {job.date} · {job.place}
+                  </span>
+                  <h3>{job.title}</h3>
+                  <ul className="points">
+                    {job.points.map((point) => (
+                      <li key={point}>{point}</li>
+                    ))}
+                  </ul>
+                </article>
+              </Reveal>
+            ))}
+            <Reveal delay={200}>
+              <article className="tile tile-dashed">
+                <span className="tile-tag">Education</span>
+                {education.map((step) => (
+                  <div key={step.title} className="school">
+                    <strong>{step.title}</strong>
+                    <span>
+                      {step.place} · {step.date}
+                    </span>
+                  </div>
+                ))}
+              </article>
+            </Reveal>
+          </div>
+        </section>
+
         <section id="projects" className="container section">
           <Reveal>
             <h2>Projects</h2>
@@ -84,7 +121,7 @@ export default function Home() {
           <div className="contact-card">
             <div className="contact-text">
               <h2>Get in touch</h2>
-              <p>Quantitative finance, risk and data science.</p>
+              <p>Quantitative finance, optimization and machine learning.</p>
             </div>
             <div className="buttons">
               <a href={`mailto:${site.email}`} className="button button-dark lift">
